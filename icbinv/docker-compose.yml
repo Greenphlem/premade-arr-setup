@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  icbinvs4:
+    build:
+      context: /home/adorsi/ICantBelieveItsNotValetudo
+      dockerfile: Dockerfile
+    user: 1000:1000
+    container_name: "ICBINVS4"
+    restart: unless-stopped
+    volumes:
+      - /home/adorsi/ICantBelieveItsNotValetudo/config.json:/app/config.json
+    network_mode: "host"
