@@ -4,9 +4,9 @@ services:
     build:
       context: /home/adorsi/ICantBelieveItsNotValetudo
       dockerfile: Dockerfile
-    user: 1000:1000
-    container_name: "ICBINVS4"
+    user: '1000:1000'
+    container_name: ICBINVS4
     restart: unless-stopped
     volumes:
-      - /home/adorsi/ICantBelieveItsNotValetudo/config.json:/app/config.json
-    network_mode: "host"
+      - '/home/adorsi/ICantBelieveItsNotValetudo/config.json:/app/config.json'
+    network_mode: host
