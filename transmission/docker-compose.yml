@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+    transmission-openvpn:
+        cap_add:
+            - NET_ADMIN
+        volumes:
+            - '/mnt/media/torrents/:/data'
+        environment:
+            - OPENVPN_PROVIDER=PIA
+            - OPENVPN_CONFIG=ca_vancouver
+            - OPENVPN_USERNAME=p1651372
+            - OPENVPN_PASSWORD=QT8pNA7PmG!QKg24q&
+            - LOCAL_NETWORK=10.0.10.0/24
+            - TRANSMISSION_WEB_UI=flood-for-transmission
+            - TRANSMISSION_PEER_PORT=62348
+            - TRANSMISSION_PORT_FORWARD=true
+            - PUID=1000
+            - PGID=1003
+        logging:
+            driver: json-file
+            options:
+                max-size: 10m
+        ports:
+            - '9091:9091'
+        image: haugene/transmission-openvpn:dev
+        restart:
+            always
+        user: 0:1000
