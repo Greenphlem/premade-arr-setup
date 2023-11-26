@@ -6,7 +6,7 @@ services:
   ports:
    - 7878:7878
   volumes:
-    - /home/adorsi/radarr/config
+    - /home/adorsi/radarr/config:/config
     - /mnt/media/Movies:/mnt/media/Movies
     - /mnt/media/torrents:/mnt/media/torrents
   environment:
@@ -21,7 +21,7 @@ services:
   ports:
    - 8989:8989
   volumes:
-    - /home/adorsi/sonarr/config
+    - /home/adorsi/sonarr/config:/config
     - /mnt/media/Shows:/mnt/media/Shows
     - /mnt/media/torrents:/mnt/media/torrents
   environment:
