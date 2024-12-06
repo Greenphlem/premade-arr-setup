@@ -60,6 +60,7 @@ services:
       - /path/to/movies:/movies
       - /path/to/shows:/shows
     restart: unless-stopped
+    
   overseerr:
     image: sctx/overseerr:latest
     container_name: overseerr
